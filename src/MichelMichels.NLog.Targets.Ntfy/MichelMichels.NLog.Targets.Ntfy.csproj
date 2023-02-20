@@ -1,9 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Title>NLog target for ntfy.sh</Title>
+    <Authors>Michel Michels</Authors>
+    <Description>This package contains an NLog target and a layout renderer  for the ntfy.sh service.</Description>
+    <PackageProjectUrl>https://github.com/MichelMichels/nlog-ntfy</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

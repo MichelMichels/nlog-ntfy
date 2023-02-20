@@ -1,4 +1,5 @@
 using NLog;
+using MichelMichels.NLog.Targets.Ntfy;
 
 namespace MichelMichels.NLog.Targets.Ntfy.Tests
 {

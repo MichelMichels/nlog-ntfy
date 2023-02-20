@@ -1,9 +1,8 @@
-﻿using MichelMichels.NLog.Targets.Ntfy;
-using NLog;
+﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
 
-namespace NtfySharp.Demo
+namespace MichelMichels.NLog.Targets.Ntfy
 {
     [Target("Ntfy")]
     public sealed class NtfyTarget : AsyncTaskTarget
