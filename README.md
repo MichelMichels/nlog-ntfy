@@ -30,6 +30,12 @@
   - [1. Add extension](#1-add-extension)
   - [2. Add target](#2-add-target)
   - [3. Add or edit rule](#3-add-or-edit-rule)
+- [Configuration](#configuration)
+  - [Changing host](#changing-host)
+  - [Changing notification title](#changing-notification-title)
+  - [Changing topic](#changing-topic)
+  - [Changing title icons](#changing-title-icons)
+  - [Defaults](#defaults)
 - [Credits](#credits)
 
 </details>
@@ -89,6 +95,64 @@ In this snippet, `logntfy` (the name of the target configured above) is added to
     <logger name="*" minlevel="Trace" writeTo="logfile,logconsole,logntfy" />
 </rules>
 ```
+
+## Configuration
+
+### Changing host
+
+> :information_source: The default value for the host is `https://ntfy.sh/`.
+
+If you want to use another ntfy-server, you can change the `host` attribute on the target.
+
+Example:
+```xml
+<target xsi:type="Ntfy" name="logntfy" host="https://other.ntfy.server/"  />
+```
+
+### Changing notification title
+
+> :information_source: The default value for the title is `NLog`.
+
+The notification title contains 3 parts:
+  
+* A symbol linked to the LogLevel
+* The string-value of the LogLevel (f.e. 'Debug')
+* The value in the 'Title' attribute (f.e. your app name)
+
+The notification title of your Ntfy notification for a debug log message with default configuration would be:
+```
+:computer: Debug - NLog
+```
+In previous example, the `NLog` part will be changed when setting the `Title` attribute on the target.
+
+### Changing topic
+
+> :information_source: The default value for the topic is `nlog-ntfy`.
+
+> :warning: You should change the topic if you don't want other people to read your logging.
+
+Set the `topic` attribute on the target to change to a ntfy topic of your choice.
+
+### Changing title icons
+
+You can change the title icons (or 'tags') by setting the `*Tags` attributes. See the [emoji shortcodes](https://docs.ntfy.sh/emojis/) on ntfy.sh for supported emoji-tags. See the [defaults table](#defaults) for the default values.
+
+### Defaults
+
+These are the default values when nothing is changed.
+
+| Setting | Value |
+|---------|-------|
+| Host    | `https://ntfy.sh/` |
+| Topic    | `nlog-ntfy` |
+| Title     | `NLog` |
+| TraceTags | empty |
+| DebugTags | :computer:, `computer` |
+| InformationTags | :information_source:, `information_source` |
+| WarnTags | :warning:, `warning` |
+| ErrorTags | :exclamation:, `exclamation` |
+| FatalTags | :skull:, `skull` |
+| DefaultTags (fallback) | empty |
 
 ## Credits
 
