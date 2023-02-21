@@ -59,7 +59,7 @@ Install-Package MichelMichels.NLog.Targets.Ntfy
 
 ## Getting started
 
-> :warning: This assumes you already have a `nlog.config` file setup. For more information to setup NLog, see the [NLog wiki](https://github.com/NLog/NLog/wiki).
+> :warning: This assumes you already have a `nlog.config` file. For more information to setup NLog, see the [NLog wiki](https://github.com/NLog/NLog/wiki).
 
 These instructions will add information to your NLog configuration file to make our target available. In this setup, the default nlog.config is used and nothing is removed. 
 
