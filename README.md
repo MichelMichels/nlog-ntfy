@@ -1,7 +1,6 @@
-
 <div align="center">
     <img alt="NLog logo" src="https://raw.githubusercontent.com/NLog/NLog.github.io/master/images/NLog-logo-only_small.png" height="64" />
-    :heavy_plus_sign:
+    <p style="display:inline-block; vertical-align:top; font-size:3rem;margin:0 1rem;">:heavy_plus_sign:</p>
     <img alt="Ntfy logo" src="https://github.com/binwiederhier/ntfy/raw/main/web/public/static/img/ntfy.png" height="64" />
 </div>
 <h1 align="center">
