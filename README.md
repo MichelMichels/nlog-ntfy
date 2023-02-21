@@ -31,10 +31,10 @@
   - [2. Add target](#2-add-target)
   - [3. Add or edit rule](#3-add-or-edit-rule)
 - [Configuration](#configuration)
-  - [Changing host](#changing-host)
-  - [Changing notification title](#changing-notification-title)
-  - [Changing topic](#changing-topic)
-  - [Changing title icons](#changing-title-icons)
+  - [Host](#host)
+  - [Notification title](#notification-title)
+  - [Topic](#topic)
+  - [Notification title icons/tags](#notification-title-iconstags)
   - [Defaults](#defaults)
 - [LayoutRenderer](#layoutrenderer)
   - [Disable date output](#disable-date-output)
@@ -106,7 +106,7 @@ In this snippet, `logntfy` (the name of the target configured above) is added to
 
 ## Configuration
 
-### Changing host
+### Host
 
 > :information_source: The default value for the host is `https://ntfy.sh/`.
 
@@ -117,7 +117,7 @@ Example:
 <target xsi:type="Ntfy" name="logntfy" host="https://other.ntfy.server/"  />
 ```
 
-### Changing notification title
+### Notification title
 
 > :information_source: The default value for the title is `NLog`.
 
@@ -133,7 +133,7 @@ The notification title of your Ntfy notification for a debug log message with de
 ```
 In previous example, the `NLog` part will be changed when setting the `Title` attribute on the target.
 
-### Changing topic
+### Topic
 
 > :information_source: The default value for the topic is `nlog-ntfy`.
 
@@ -141,7 +141,7 @@ In previous example, the `NLog` part will be changed when setting the `Title` at
 
 Set the `topic` attribute on the target to change to a ntfy topic of your choice.
 
-### Changing title icons
+### Notification title icons/tags
 
 You can change the title icons (or 'tags') by setting the `*Tags` attributes. See the [emoji shortcodes](https://docs.ntfy.sh/emojis/) on ntfy.sh for supported emoji-tags. See the [defaults table](#defaults) for the default values.
 
