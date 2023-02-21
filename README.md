@@ -38,6 +38,7 @@
   - [Defaults](#defaults)
 - [LayoutRenderer](#layoutrenderer)
   - [Disable date output](#disable-date-output)
+- [Screenshots](#screenshots)
 - [Credits](#credits)
 
 </details>
@@ -196,6 +197,15 @@ Date and time output can be disabled by using the `isdaterendered` option on the
 layout="${ntfy:isdaterendered=false}"
 ```
 
+<br />
+<hr>
+
+## Screenshots
+
+`Coming soon™` 
+
+<br />
+<hr>
 
 ## Credits
 
