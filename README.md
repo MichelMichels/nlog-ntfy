@@ -30,11 +30,12 @@
   - [1. Add extension](#1-add-extension)
   - [2. Add target](#2-add-target)
   - [3. Add or edit rule](#3-add-or-edit-rule)
+  - [4. Done!](#4-done)
 - [Configuration](#configuration)
   - [Host](#host)
   - [Notification title](#notification-title)
-  - [Topic](#topic)
   - [Notification title icons/tags](#notification-title-iconstags)
+  - [Topic](#topic)
   - [Defaults](#defaults)
 - [LayoutRenderer](#layoutrenderer)
   - [Disable date output](#disable-date-output)
@@ -101,6 +102,10 @@ In this snippet, `logntfy` (the name of the target configured above) is added to
 </rules>
 ```
 
+### 4. Done!
+
+After these steps, you can subscribe to the `nlog-ntfy` topic and you will see the notifications come in. More information is included below to change the default settings, but you can use this as-is. I only recommend to change the topic attribute in the target configuration to something only you know. See [Configuration > Topic](#topic) for instructions.
+
 <br />
 <hr>
 
@@ -123,7 +128,7 @@ Example:
 
 The notification title contains 3 parts:
   
-* A symbol linked to the LogLevel
+* An emoji linked to the LogLevel (tags)
 * The string-value of the LogLevel (f.e. 'Debug')
 * The value in the 'Title' attribute (f.e. your app name)
 
@@ -133,17 +138,23 @@ The notification title of your Ntfy notification for a debug log message with de
 ```
 In previous example, the `NLog` part will be changed when setting the `Title` attribute on the target.
 
+### Notification title icons/tags
+
+You can change the title icons (or 'tags') by setting the `*Tags` attributes. See the [emoji shortcodes](https://docs.ntfy.sh/emojis/) on ntfy.sh for supported emoji-tags. See the [defaults table](#defaults) for the default values.
+
 ### Topic
 
 > :information_source: The default value for the topic is `nlog-ntfy`.
 
 > :warning: You should change the topic if you don't want other people to read your logging.
 
-Set the `topic` attribute on the target to change to a ntfy topic of your choice.
+Set the `topic` attribute on the target to change to a ntfy topic of your choice. In the example below, the topic is changed to `my-app-logging`.
 
-### Notification title icons/tags
+Example:
+```xml
+<target xsi:type="Ntfy" name="logntfy" topic="my-app-logging"  />
+```
 
-You can change the title icons (or 'tags') by setting the `*Tags` attributes. See the [emoji shortcodes](https://docs.ntfy.sh/emojis/) on ntfy.sh for supported emoji-tags. See the [defaults table](#defaults) for the default values.
 
 ### Defaults
 
