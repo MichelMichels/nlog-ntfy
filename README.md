@@ -36,6 +36,8 @@
   - [Changing topic](#changing-topic)
   - [Changing title icons](#changing-title-icons)
   - [Defaults](#defaults)
+- [LayoutRenderer](#layoutrenderer)
+  - [Disable date output](#disable-date-output)
 - [Credits](#credits)
 
 </details>
@@ -60,6 +62,8 @@ You can also use the cli of the package manager with following command:
 ```cli
 Install-Package MichelMichels.NLog.Targets.Ntfy
 ```
+<br />
+<hr>
 
 ## Getting started
 
@@ -95,6 +99,9 @@ In this snippet, `logntfy` (the name of the target configured above) is added to
     <logger name="*" minlevel="Trace" writeTo="logfile,logconsole,logntfy" />
 </rules>
 ```
+
+<br />
+<hr>
 
 ## Configuration
 
@@ -153,6 +160,42 @@ These are the default values when nothing is changed.
 | ErrorTags | :exclamation:, `exclamation` |
 | FatalTags | :skull:, `skull` |
 | DefaultTags (fallback) | empty |
+
+<br />
+<hr>
+
+
+## LayoutRenderer
+
+Any layout renderer can be used, but I also included one. The body of the notification will be the render output.
+To use the renderer included in this package you can add following attribute and value to the Ntfy target:
+
+```xml
+layout="${ntfy}"
+```
+
+This produces following output:
+```
+Date: dd/mm/yyyy
+Time: hh:mm
+
+{logMessage}
+
+Exception: {exception.ToString()}
+
+StackTrace: {stackTrace}
+```
+
+The exception and stacktrace output is only enabled if this info is present in the log event.
+
+### Disable date output
+
+Date and time output can be disabled by using the `isdaterendered` option on the layoutrenderer.
+
+```xml
+layout="${ntfy:isdaterendered=false}"
+```
+
 
 ## Credits
 
