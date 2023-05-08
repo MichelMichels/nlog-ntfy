@@ -1,6 +1,6 @@
 <div align="center">
     <img alt="NLog logo" src="https://raw.githubusercontent.com/NLog/NLog.github.io/master/images/NLog-logo-only_small.png" height="64" />
-    <img alt="Ntfy logo" src="https://github.com/binwiederhier/ntfy/raw/main/web/public/static/img/ntfy.png" height="64" />
+    <img alt="Ntfy logo" src="https://raw.githubusercontent.com/binwiederhier/ntfy/main/web/public/static/images/ntfy.png" height="64" />
 </div>
 <h1 align="center">
     NLog target and layout renderer for <a href="https://ntfy.sh/">ntfy.sh</a>
