@@ -2,49 +2,48 @@
 using NLog.LayoutRenderers;
 using System.Text;
 
-namespace MichelMichels.NLog.Targets.Ntfy
+namespace MichelMichels.NLog.Targets.Ntfy;
+
+[LayoutRenderer("ntfy")]
+public sealed class NtfyLayoutRenderer : LayoutRenderer
 {
-    [LayoutRenderer("ntfy")]
-    public sealed class NtfyLayoutRenderer : LayoutRenderer
+    public bool IsDateRendered { get; set; } = true;
+
+    protected override void Append(StringBuilder builder, LogEventInfo logEvent)
     {
-        public bool IsDateRendered { get; set; } = true;
+        RenderDate(builder, logEvent);
+        RenderMessage(builder, logEvent);
+        RenderException(builder, logEvent);
+        RenderStackTrace(builder, logEvent);
+    }
 
-        protected override void Append(StringBuilder builder, LogEventInfo logEvent)
+    private void RenderDate(StringBuilder builder, LogEventInfo logEvent)
+    {
+        if (IsDateRendered)
         {
-            RenderDate(builder, logEvent);
-            RenderMessage(builder, logEvent);
-            RenderException(builder, logEvent);
-            RenderStackTrace(builder, logEvent);                
+            builder.AppendLine($"Date: {logEvent.TimeStamp:dd/MM/yyyy}");
+            builder.AppendLine($"Time: {logEvent.TimeStamp:HH:mm}");
+            builder.AppendLine();
         }
-
-        private void RenderDate(StringBuilder builder, LogEventInfo logEvent)
+    }
+    private void RenderMessage(StringBuilder builder, LogEventInfo logEvent)
+    {
+        builder.AppendLine($"{logEvent.Message}");
+    }
+    private void RenderException(StringBuilder builder, LogEventInfo logEvent)
+    {
+        if (logEvent.Exception != null)
         {
-            if (IsDateRendered)
-            {
-                builder.AppendLine($"Date: {logEvent.TimeStamp:dd/MM/yyyy}");
-                builder.AppendLine($"Time: {logEvent.TimeStamp:HH:mm}");
-                builder.AppendLine();
-            }
+            builder.AppendLine();
+            builder.AppendLine($"Exception: {logEvent.Exception.ToString()}");
         }
-        private void RenderMessage(StringBuilder builder, LogEventInfo logEvent)
+    }
+    private void RenderStackTrace(StringBuilder builder, LogEventInfo logEvent)
+    {
+        if (logEvent.HasStackTrace)
         {
-            builder.AppendLine($"{logEvent.Message}");
-        }
-        private void RenderException(StringBuilder builder, LogEventInfo logEvent)
-        {
-            if (logEvent.Exception != null)
-            {
-                builder.AppendLine();
-                builder.AppendLine($"Exception: {logEvent.Exception.ToString()}");
-            }
-        }
-        private void RenderStackTrace(StringBuilder builder, LogEventInfo logEvent)
-        {
-            if (logEvent.HasStackTrace)
-            {
-                builder.AppendLine();
-                builder.AppendLine($"StackTrace: {logEvent.StackTrace.ToString()}");
-            }
+            builder.AppendLine();
+            builder.AppendLine($"StackTrace: {logEvent.StackTrace.ToString()}");
         }
     }
 }

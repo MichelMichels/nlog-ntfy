@@ -1,26 +1,19 @@
-<div align="center">
-    <img alt="NLog logo" src="https://raw.githubusercontent.com/NLog/NLog.github.io/master/images/NLog-logo-only_small.png" height="64" />
-    <img alt="Ntfy logo" src="https://raw.githubusercontent.com/binwiederhier/ntfy/main/web/public/static/images/ntfy.png" height="64" />
-</div>
-<h1 align="center">
-    NLog target and layout renderer for <a href="https://ntfy.sh/">ntfy.sh</a>
-</h1>
+<!-- omit in toc -->
+# NLog target and layout renderer for [ntfy.sh](https://ntfy.sh) 🪵
 
-<div align="center">
-    <a href="https://www.nuget.org/packages/MichelMichels.NLog.Targets.Ntfy">
-        <img src="https://img.shields.io/nuget/v/MichelMichels.NLog.Targets.Ntfy"/>
-    </a>
-</div>
+[![NuGet Version](https://img.shields.io/nuget/v/MichelMichels.NLog.Targets.Ntfy)](https://www.nuget.org/packages/MichelMichels.NLog.Targets.Ntfy)
+[![.NET](https://github.com/MichelMichels/nlog-ntfy/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MichelMichels/nlog-ntfy/actions/workflows/dotnet.yml)
+
+<img alt="NLog logo" src="https://raw.githubusercontent.com/NLog/NLog.github.io/master/images/NLog-logo-only_small.png" height="64" />
+<img alt="Ntfy logo" src="https://raw.githubusercontent.com/binwiederhier/ntfy/main/web/public/static/images/ntfy.png" height="64" />
 
 <br />
 
-<div align="center">
-    This repository contains a library containing the code for the NLog target and layout renderer, and also a test and demo console library.
-</div>
+This repository contains a library containing the code for the NLog target and layout renderer, and also a test and demo console library.
 <br />
 <br />
 
-<details open="open">
+<details>
 <summary>Table of Contents</summary>
 
 - [Prerequisites](#prerequisites)
@@ -47,8 +40,8 @@
 ---
 
 ## Prerequisites
-- [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-- [NLog 5.1.2+](https://github.com/NLog/NLog)
+- [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- [NLog 5.*](https://github.com/NLog/NLog)
 - [Ntfy.sh](https://ntfy.sh)
 
 ## Building
@@ -160,18 +153,18 @@ Example:
 
 These are the default values when nothing is changed.
 
-| Setting | Value |
-|---------|-------|
-| Host    | `https://ntfy.sh/` |
-| Topic    | `nlog-ntfy` |
-| Title     | `NLog` |
-| TraceTags | empty |
-| DebugTags | :computer:, `computer` |
-| InformationTags | :information_source:, `information_source` |
-| WarnTags | :warning:, `warning` |
-| ErrorTags | :exclamation:, `exclamation` |
-| FatalTags | :skull:, `skull` |
-| DefaultTags (fallback) | empty |
+| Setting                | Value                                      |
+| ---------------------- | ------------------------------------------ |
+| Host                   | `https://ntfy.sh/`                         |
+| Topic                  | `nlog-ntfy`                                |
+| Title                  | `NLog`                                     |
+| TraceTags              | empty                                      |
+| DebugTags              | :computer:, `computer`                     |
+| InformationTags        | :information_source:, `information_source` |
+| WarnTags               | :warning:, `warning`                       |
+| ErrorTags              | :exclamation:, `exclamation`               |
+| FatalTags              | :skull:, `skull`                           |
+| DefaultTags (fallback) | empty                                      |
 
 <br />
 <hr>

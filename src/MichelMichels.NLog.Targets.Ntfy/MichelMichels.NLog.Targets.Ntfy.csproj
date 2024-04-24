@@ -1,19 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
     <Title>NLog target for ntfy.sh</Title>
     <Authors>Michel Michels</Authors>
-    <Description>This package contains an NLog target and a layout renderer  for the ntfy.sh service.</Description>
+    <Description>This package contains an NLog target and a layout renderer for the ntfy.sh service.</Description>
     <PackageProjectUrl>https://github.com/MichelMichels/nlog-ntfy</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>
+      - Release 8.0.0 to reflect .NET version support
+      - Floating version used of NLog (5.*)
+    </PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/MichelMichels/nlog-ntfy</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>nlog ntfy ntfy.sh target logging log</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="5.1.2" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="5.*" />
   </ItemGroup>
 
 </Project>
